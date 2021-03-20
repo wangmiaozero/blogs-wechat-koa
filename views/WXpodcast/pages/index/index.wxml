@@ -1,0 +1,16 @@
+<view class='container'>
+  <image mode='widthFix' class='bcg' src='/images/launch_bcg.png'></image>
+  <view class="skip" bindtap="skip">
+    跳过
+    <text style="color:red; font-weight: 300;">{{count}}</text>
+  </view>
+  <view class='top'>
+    <view class='wrapper'>
+      <image mode='widthFix' src='/images/launch_diamond.png'></image>
+      <view>相信科技的力量</view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <image mode='widthFix' src='/images/launch_bottom.png'></image>
+  </view>
+</view>

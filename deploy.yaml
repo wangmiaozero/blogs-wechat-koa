@@ -1,0 +1,22 @@
+# deploy.yaml
+apps:
+  - script: index.js # 入口文件
+    name: 'wechat' # 程序名称
+    env: # 环境变量
+      COMMON_VARIABLE: true
+    env_production:
+      NODE_ENV: production
+
+deploy: # 部署脚本
+  production: # 生产环境
+    user: root # 服务器的用户名
+    host:  # 服务器的ip地址 xxx.xx.xxx.xxx`
+    port: 22 # ssh端口 22
+    ref: origin/master # 要拉取的git分支
+    ssh_options: StrictHostKeyChecking=no # SSH 公钥检查
+    repo: https://github.com/wangmiaozero/blogs-wechat.git # 远程仓库地址 git@github.com:wangmiaozero/blogs-wechat.git
+    path: /home # 拉取到服务器某个目录下
+    pre-deploy: git fetch --all # 部署前执行
+    post-deploy: npm install &&  pm2 reload deploy.yaml --env production # 部署后执行
+    env:
+      NODE_ENV: production

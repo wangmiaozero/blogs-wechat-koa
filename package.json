@@ -1,0 +1,32 @@
+{
+  "name": "blogs-wechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development nodemon --harmony index.js",
+    "check": "cross-env NODE_ENV=production nodemon --harmony index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "pm2 deploy production"
+  },
+  "keywords": [],
+  "author": "wangmiaozero <1061214467@qq.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^5.0.0",
+    "crypto": "^1.0.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.1",
+    "koa-mysql-session": "0.0.2",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^5.0.0",
+    "koa2-request": "^1.0.4",
+    "koa2-response": "^2.0.2",
+    "md5": "^2.2.1",
+    "mysql": "^2.17.1",
+    "pm2": "^2.8.0",
+    "redis": "^2.8.0"
+  }
+}

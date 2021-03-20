@@ -1,0 +1,34 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- 加载中 -->
+  <i-spin fix wx:if="{{loading}}"></i-spin>
+  <!-- articles -->
+  <view class="post-card" wx:for="{{articles}}" wx:key="postId">
+    <!-- Navigator页面跳转 -->
+    <navigator url="/pages/detail/index?id={{item.articleID}}" animation="{{anp}}">
+      <view class="post-card-image-link">
+        <image class="img" lazy-load="true" mode="widthFix" src="{{item.listPic}}"></image>
+      </view>
+      <view class="post-card-content">
+        <view style="margin-left: 10px; color: #cccccc;"></view>
+        <view class="title">{{item.title}}</view>
+        <view class="summary">{{item.excerpt}}</view>
+        <view class="footer">
+          <view class="postDate">
+            <i-icon type="addressbook" color='#738a94' size='16' />
+            <text class='author'>{{item.author}}</text>
+          </view>
+          <view class="postDate">
+            <i-icon type="browse" color='#738a94' size='18' />
+            <text class='author'>{{item.read_counts}}</text>
+          </view>
+          <view class="postDate">
+            <i-icon type="time" color='#738a94' size='16' />
+            <text class='author'>{{item.articleTime}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<i-load-more tip="{{bottomWord}}" loading="{{loadMore}}" hidden="{{loadMores}}" />
